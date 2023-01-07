@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateweay-deploy
+  labels: 
+    owner: d
+spec:
+  replicas: {{ .Values.gateway.replicas }}
+  
+  selector:
+    matchLabels:
+      project: {{ .Values.gateway.name }}
+   
+  template:
+    metadata:
+      labels:
+        project: {{ .Values.gateway.name }}
+     
+    spec:
+      containers:
+        - name: rsoigateway
+          image: {{ .Values.gateway.image }}
+          ports:
+            - containerPort: {{ .Values.gateway.containerPort }}
