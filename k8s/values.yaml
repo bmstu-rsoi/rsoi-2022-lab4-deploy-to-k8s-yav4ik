@@ -1,23 +1,23 @@
 gateway:
-  name: rsoi-gateway
+  name: gateway
   image: yav4ik/rsoigateway
   containerPort: 8080
   replicas: 1
 
 flight:
-  name: rsoi-flights
+  name: flight
   image: yav4ik/rsoiflight
   containerPort: 8060
   replicas: 1
 
 privilege:
-  name: rsoi-privilege
+  name: privilege
   image: yav4ik/rsoiprivilege
   containerPort: 8050
   replicas: 1
 
 ticket:
-  name: rsoi-ticket
+  name: ticket
   image: yav4ik/rsoiticket
   containerPort: 8070
   replicas: 1

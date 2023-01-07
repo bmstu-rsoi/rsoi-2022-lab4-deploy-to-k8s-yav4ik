@@ -9,12 +9,12 @@ spec:
   
   selector:
     matchLabels:
-      project: {{ .Values.gateway.name }}
+      app: {{ .Values.gateway.name }}
    
   template:
     metadata:
       labels:
-        project: {{ .Values.gateway.name }}
+        app: {{ .Values.gateway.name }}
      
     spec:
       containers:

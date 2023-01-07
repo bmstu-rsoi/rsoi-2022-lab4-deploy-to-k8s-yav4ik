@@ -23,18 +23,11 @@ jobs:
           exec -l $SHELL
           echo ${{ secrets.YANDEX_TOKEN }} | yc init --password-stdin  
           yc managed-kubernetes cluster get-credentials --id ${{ secrets.CLUSTER_ID }} --external --force
-          helm install lab k8s\
+          helm upgrade lab k8s\
           kubectl get pods
           kubectl get svc
           kubectl get ingress
         timeout-minutes: 1
-
-      - name: Run postgres
-        run: |
-          ./postgresql/action.sh
-          kubectl get pods
-          kubectl get svc
-          kubectl get ingress
 
       - name: Countdown
         run: sleep 25s

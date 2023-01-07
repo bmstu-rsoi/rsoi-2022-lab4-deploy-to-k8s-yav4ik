@@ -7,7 +7,7 @@ metadata:
     
 spec:
   selector:
-    project: {{ .Values.gateway.name }}
+    app: {{ .Values.gateway.name }}
   ports:
     - name: {{ .Values.gateway.name }}-listener
       protocol: TCP

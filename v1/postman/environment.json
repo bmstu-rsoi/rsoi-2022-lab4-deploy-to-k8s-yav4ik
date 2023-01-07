@@ -3,8 +3,8 @@
 	"name": "[rsoi][lab4] Flight Service",
 	"values": [
 		{
-			"key": "62.84.113.91",
-			"value": "",
+			"key": "baseUrl",
+			"value": "http://51.250.12.188:8080",
 			"enabled": true
 		}
 	],

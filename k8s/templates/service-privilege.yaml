@@ -6,9 +6,8 @@ metadata:
     owner: a
     
 spec:
-  type: LoadBalancer
   selector:
-    project: {{ .Values.privilege.name }}
+    app: {{ .Values.privilege.name }}
   ports:
     - name: {{ .Values.privilege.name }}-listener
       protocol: TCP

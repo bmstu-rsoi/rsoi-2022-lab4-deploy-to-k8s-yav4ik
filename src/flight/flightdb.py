@@ -18,7 +18,7 @@ import psycopg2
 
 class Flightdb:
     def __init__(self):
-        DB_URL = "postgresql://program:test@postgres:5432/flights"
+        DB_URL = "host='mouse.db.elephantsql.com' port = '5432' dbname='mtxqlmnr' user='mtxqlmnr' password='Rp4hJqFU4yP85QOxXlq7UR-JuCi1VtCW'"
         self.db = psycopg2.connect(DB_URL)
         self.cursor = self.db.cursor()
         self.create_flightsdb()

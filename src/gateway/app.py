@@ -52,6 +52,10 @@ flights_ip = "flight"
 privilege_ip = "privilege"
 ticket_ip = "ticket"
 
+# flights_ip = "10.96.239.239"
+# privilege_ip = "10.96.167.240"
+# ticket_ip = "10.96.131.240"
+
 # flights_ip = "localhost"
 # privilege_ip = "localhost"
 # ticket_ip = "localhost"
@@ -67,7 +71,6 @@ def health():
 def get_flights():
     page = request.args.get("page")
     size = request.args.get("size")
-
     flight_status = 503
     json_flight = {}
     try:
@@ -291,7 +294,6 @@ def post_ticket():
         pass
 
     if status_privil != 200:
-        print(2)
         requests.delete(f'http://{ticket_ip}:8070/api/v1/tickets/delete/{user}/{json_ticket["ticketUid"]}')
         return {"message": "Bonus Service unavailable"}, 503
 

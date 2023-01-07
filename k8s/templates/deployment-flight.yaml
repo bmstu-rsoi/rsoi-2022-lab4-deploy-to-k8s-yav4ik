@@ -9,12 +9,12 @@ spec:
   
   selector:
     matchLabels:
-      project: {{ .Values.flight.name }}
+      app: {{ .Values.flight.name }}
    
   template:
     metadata:
       labels:
-        project: {{ .Values.flight.name }}
+        app: {{ .Values.flight.name }}
      
     spec:
       containers:
