@@ -8,9 +8,9 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: {{ .Values.gateway.name }}
-    ports:
-      - name: {{ .Values.gateway.name }}-listener
-        proticol: TCP
-        port: 80
-        targetPort: {{ .Values.gateway.containerPort }}
+    project: {{ .Values.gateway.name }}
+  ports:
+    - name: {{ .Values.gateway.name }}-listener
+      protocol: TCP
+      port: {{ .Values.gateway.containerPort }}
+      targetPort: {{ .Values.flight.name }}

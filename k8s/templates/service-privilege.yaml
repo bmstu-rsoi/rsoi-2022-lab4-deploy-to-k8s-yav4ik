@@ -8,9 +8,9 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: {{ .Values.privilege.name }}
-    ports:
-      - name: {{ .Values.privilege.name }}-listener
-        proticol: TCP
-        port: {{ .Values.privilege.containerPort }}
-        targetPort: {{ .Values.privilege.containerPort }}
+    project: {{ .Values.privilege.name }}
+  ports:
+    - name: {{ .Values.privilege.name }}-listener
+      protocol: TCP
+      port: {{ .Values.privilege.containerPort }}
+      targetPort: {{ .Values.flight.name }}

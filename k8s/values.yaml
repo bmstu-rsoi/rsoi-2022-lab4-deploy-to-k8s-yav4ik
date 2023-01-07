@@ -4,9 +4,9 @@ gateway:
   containerPort: 8080
   replicas: 1
 
-flights:
+flight:
   name: rsoi-flights
-  image: yav4ik/rsoiflights
+  image: yav4ik/rsoiflight
   containerPort: 8060
   replicas: 1
 
