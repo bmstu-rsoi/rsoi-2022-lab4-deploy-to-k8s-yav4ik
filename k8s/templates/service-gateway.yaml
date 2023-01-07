@@ -6,11 +6,11 @@ metadata:
     owner: a
     
 spec:
-  type: LoadBalancer
   selector:
     project: {{ .Values.gateway.name }}
   ports:
     - name: {{ .Values.gateway.name }}-listener
       protocol: TCP
       port: {{ .Values.gateway.containerPort }}
-      targetPort: {{ .Values.flight.name }}
+      targetPort: {{ .Values.gateway.containerPort }}
+  type: LoadBalancer

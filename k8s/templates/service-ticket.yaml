@@ -13,4 +13,5 @@ spec:
     - name: {{ .Values.ticket.name }}-listener
       protocol: TCP
       port: {{ .Values.ticket.containerPort }}
-      targetPort: {{ .Values.flight.name }}
+      targetPort: {{ .Values.ticket.containerPort }}
+  type: ClusterIP
