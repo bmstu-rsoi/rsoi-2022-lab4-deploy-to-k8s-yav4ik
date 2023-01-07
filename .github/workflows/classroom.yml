@@ -29,7 +29,7 @@ jobs:
           kubectl get ingress
         timeout-minutes: 1
 
-      - name Run postgres
+      - name: Run postgres
         run: |
           ./postgresql/action.sh
           kubectl get pods
