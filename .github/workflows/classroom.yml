@@ -29,6 +29,17 @@ jobs:
           kubectl get ingress
         timeout-minutes: 1
 
+      - name Run postgres
+        run: |
+          ./postgresql/action.sh
+          kubectl get pods
+          kubectl get svc
+          kubectl get ingress
+
+      - name: Countdown
+        run: sleep 25s
+        shell: bash
+
       - name: Run API Tests
         uses: matt-ball/newman-action@master
         with:
